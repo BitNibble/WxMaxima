@@ -1,0 +1,30 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 12.01.0 ] */
+
+/* [wxMaxima: input   start ] */
+E:180;
+Vm:230*sqrt(2),numer;
+a:45*%pi/180;
+R:12;
+L:22*10^-3;
+w:50*2*%pi,numer;
+b:atan(w*L/R),numer;
+z:sqrt(R^2+(w*L)^2),numer;
+V(wt):=Vm*sin(wt+a);
+C:(E/R)-Vm/z*sin(a-b),numer;
+ti:-0.1;
+tf:2*%pi;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+i(wt):=C*%e^(-R/(L*w)*wt)+Vm/z*sin(wt+a-b)-(E/R);
+Vt(wt):=if i(wt)>0 then V(wt) else 0;
+wxplot2d([i(wt)],[wt,ti,tf],[y,-40,10],[gnuplot_preamble, "set grid"]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxplot2d([V(wt), Vt(wt)],[wt,ti,tf],[y,-350,350],[gnuplot_preamble, "set grid"]);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

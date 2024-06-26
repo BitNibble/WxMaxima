@@ -1,0 +1,95 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 12.01.0 ] */
+
+/* [wxMaxima: input   start ] */
+Vm:sqrt(2)*240,numer;
+F:50;
+E:0;
+w:2*%pi*F,numer;
+R:12;
+L:22*10^-3,numer;
+wL:w*L,numer;
+Z:sqrt(R^2+wL^2),numer;
+alpha:0,numer;
+phi:atan(wL/R),numer;
+Ct:E/R-Vm/Z*sin(alpha-phi),numer;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Io(wt):=Ct*%e^(-R/wL*wt)+Vm/Z*sin(wt+alpha-phi)-E/R;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Po_1:integrate(sqrt(2)*240*sin(wt+alpha-phi)*Io(wt),wt,0,1.73),numer;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Po_2:integrate(sqrt(2)*240*sin(wt+alpha-phi)*Io(wt),wt,0,1.885),numer;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Po_1+Po_2,numer;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+%o197/(2*%pi),numer;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Io1:integrate(Io(wt),wt,0,1.73),numer;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Io2:integrate(Io(wt),wt,4.399,2*%pi),numer;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Io2+Io1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+%o103/(2*%pi);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+sqrt(%o104),numer;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+inic:0;
+fin:1.730;
+alpha:1.885;
+Ct:-23.980;
+phi:0.523;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+V_1:integrate(sqrt(2)*240*sin(wt+alpha),wt,inic,fin),numer;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+inic:0;
+fin:108*%pi/180;
+alpha:0;
+Ct:12.206;
+phi:0.523;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+V_2:integrate(sqrt(2)*240*sin(wt+alpha),wt,inic,fin),numer;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+V_2+V_1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+%o74/(2*%pi),numer;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+sqrt(%o76);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

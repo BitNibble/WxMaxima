@@ -1,0 +1,39 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 12.01.0 ] */
+
+/* [wxMaxima: input   start ] */
+w:2*%pi*50;
+R:12;
+L:22*10^-3;
+z:sqrt(R^2+(w*L)^2),numer;
+b:atan(L*w/R);
+Vm:230*sqrt(2);
+E:180;
+a:30*(%pi/180);
+V(t):=Vm*sin(w*t+a);
+C1:((Vm/L*1/((R/L)^2+w^2))*(w*cos(a)-(R/L)*sin(a))+E/R),numer;
+C2:(Vm/L*1/((R/L)^2+w^2)*((R/L)*sin(a)-w*cos(a))),numer;
+C3:(Vm/L*1/((R/L)^2+w^2)*((R/L)*cos(a)+w*sin(a))),numer;
+C4:(E/R)-Vm/z*sin(a-b),numer;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+i1(t):=C1*%e^(-R/L*t)+C2*cos(w*t)+C3*sin(w*t)-(E/R);
+i2(t):=C4*%e^(-R/L*t)+Vm/z*sin(w*t+a-b)-(E/R);
+wxplot2d([i1(t),i2(t)],[t,-0.001,0.04],[y,-40,10],[gnuplot_preamble, "set grid"]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+i1(t):=C1*%e^(-R/L*t);
+i2(t):=C4*%e^(-R/L*t);
+wxplot2d([i1(t),i2(t)],[t,-0.001,0.04],[y,-40,10],[gnuplot_preamble, "set grid"]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+i1(t):=C2*cos(w*t)+C3*sin(w*t)-(E/R);
+i2(t):=Vm/z*sin(w*t+a-b)-(E/R);
+wxplot2d([i1(t),i2(t)],[t,-0.001,0.04],[y,-40,10],[gnuplot_preamble, "set grid"]);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

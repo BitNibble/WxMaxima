@@ -1,0 +1,34 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 11.04.0 ] */
+
+/* [wxMaxima: input   start ] */
+i(t):=10*sin(1/sqrt(L*C)*t);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+L:1*10^-3;
+C:10*10^-6;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Vc(t):=1/C*integrate(i(t), t, 0, t);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxplot2d([i(t),Vc(t),VL(t)],[t,0,%pi/10000]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+VL(t):=L*diff(i(t),t);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+VL(t);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Vc(t);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

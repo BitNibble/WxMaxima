@@ -1,0 +1,50 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 11.04.0 ] */
+
+/* [wxMaxima: input   start ] */
+I(s):=9/(s*(R+L*s));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+i(t):=ilt(I(s), s, t);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+R:0.5;
+L:20*10^-3;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+i(t);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+i(2*10^-3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+float(i(2*10^-3));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+I(s):=(L*(18-18*%e^-(1/20)))/(R+L*s)-15/(s*(R+L*s));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+i(t):=ilt(I(s), s, t);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+i(t);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxplot2d(i(t),[t,0,0.0012]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+i(0),numer;
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

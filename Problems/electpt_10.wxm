@@ -1,0 +1,40 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 12.01.0 ] */
+
+/* [wxMaxima: input   start ] */
+i(t):=V*%e^(-R*t/(2*L))/(L*sqrt(((4*L)-R^2*C)/(4*L^2*C)))*sin(sqrt(((4*L)-R^2*C)/(4*L^2*C))*t);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+V:100;
+R:1;
+L:1;
+C:1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+assume(t>0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxplot2d([i(t)],[t,0,6],[y,-10,10]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+diff(i(t),t,1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+%*L;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+integrate(i(t), t, 0, t);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+%*(1/C);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

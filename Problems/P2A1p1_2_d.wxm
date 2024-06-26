@@ -1,0 +1,33 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 12.01.0 ] */
+
+/* [wxMaxima: input   start ] */
+Voef:sqrt(1/(2*%pi)*(integrate((sqrt(2)*240*sin(wt+108))^2,wt,0,1.73)
++integrate((sqrt(2)*240*sin(wt+108))^2,wt,4.92,2*%pi))),numer;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Vm:sqrt(2)*240,numer;
+F:50;
+E:0;
+w:2*%pi*F,numer;
+R:12;
+L:22*10^-3,numer;
+wL:w*L,numer;
+Z:sqrt(R^2+wL^2),numer;
+alpha:1.8849555922;
+phi:atan(wL/R),numer;
+Ct:E/R-Vm/Z*sin(alpha-phi),numer;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Io(wt):=Ct*%e^(-R/wL*wt)+Vm/Z*sin(wt+alpha-phi)-E/R;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Ioav:sqrt(1/(2*%pi)*(integrate(Io(wt)^2,wt,0,1.73)
++integrate(Io(wt)^2,wt,4.92,2*%pi))),numer;
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

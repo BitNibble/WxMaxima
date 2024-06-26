@@ -1,0 +1,44 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 12.01.0 ] */
+
+/* [wxMaxima: input   start ] */
+E:180;
+Vm:230*sqrt(2),numer;
+a:108*%pi/180;
+R:12;
+L:22*10^-3;
+f:50;
+T:1/f;
+w:f*2*%pi,numer;
+b:atan(w*L/R),numer;
+z:sqrt(R^2+(w*L)^2),numer;
+V(t):=Vm*sin(w*t+a);
+C:(E/R)-Vm/z*sin(a-b),numer;
+ti:-0.001;
+tf:0.02;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+i(t):=C*%e^(-R/(L)*t)+Vm/z*sin(w*t+a-b)-(E/R);
+Vt(t):=if i(0)>=0 and i(t)>0 and t<T/2 then V(t) else 0;
+wxplot2d([i(t)],[t,ti,tf],[y,-40,10],[gnuplot_preamble, "set grid"]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxplot2d([V(t), Vt(t)],[t,ti,tf],[y,-350,350],[gnuplot_preamble, "set grid"]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+kill(all);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+val(t):=Vm*sin(w*t);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ev(val(t),t=0.006);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$
