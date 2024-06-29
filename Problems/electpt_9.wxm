@@ -1,34 +1,58 @@
 /* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
-/* [ Created with wxMaxima version 11.04.0 ] */
+/* [ Created with wxMaxima version 23.05.1 ] */
+/* [wxMaxima: input   start ] */
+kill(all);
+/* [wxMaxima: input   end   ] */
+
 
 /* [wxMaxima: input   start ] */
 i(t):=10*sin(1/sqrt(L*C)*t);
 /* [wxMaxima: input   end   ] */
+
 
 /* [wxMaxima: input   start ] */
 L:1*10^-3;
 C:10*10^-6;
 /* [wxMaxima: input   end   ] */
 
+
 /* [wxMaxima: input   start ] */
 Vc(t):=1/C*integrate(i(t), t, 0, t);
 /* [wxMaxima: input   end   ] */
 
+
 /* [wxMaxima: input   start ] */
 wxplot2d([i(t),Vc(t),VL(t)],[t,0,%pi/10000]);
 /* [wxMaxima: input   end   ] */
+/* [wxMaxima: question  start ] */
+<math><st>Is </st><mi lisp="*var-tag*">t</mi><st> positive, negative or zero?</st></math>
+/* [wxMaxima: question  end   ] */
+/* [wxMaxima: answer  start ] */
+p;
+/* [wxMaxima: answer  end   ] */
+
 
 /* [wxMaxima: input   start ] */
 VL(t):=L*diff(i(t),t);
 /* [wxMaxima: input   end   ] */
 
+
 /* [wxMaxima: input   start ] */
 VL(t);
 /* [wxMaxima: input   end   ] */
 
+
 /* [wxMaxima: input   start ] */
 Vc(t);
 /* [wxMaxima: input   end   ] */
+/* [wxMaxima: question  start ] */
+<math><st>Is </st><mi lisp="*var-tag*">t</mi><st> positive, negative or zero?</st></math>
+/* [wxMaxima: question  end   ] */
+/* [wxMaxima: answer  start ] */
+p;
+/* [wxMaxima: answer  end   ] */
 
-/* Maxima can't load/batch files which end with a comment! */
-"Created with wxMaxima"$
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 23.05.1"$

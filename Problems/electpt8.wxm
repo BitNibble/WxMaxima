@@ -1,17 +1,31 @@
 /* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
-/* [ Created with wxMaxima version 11.04.0 ] */
+/* [ Created with wxMaxima version 23.05.1 ] */
+/* [wxMaxima: input   start ] */
+kill(all);
+/* [wxMaxima: input   end   ] */
+
 
 /* [wxMaxima: input   start ] */
 I(s):=(100/L)/(s^2+(R/L)*s+1/(L*C));
 /* [wxMaxima: input   end   ] */
 
+
 /* [wxMaxima: input   start ] */
 i(t):=ilt(I(s), s, t);
 /* [wxMaxima: input   end   ] */
 
+
 /* [wxMaxima: input   start ] */
 i(t);
 /* [wxMaxima: input   end   ] */
+/* [wxMaxima: question  start ] */
+<math><st>Is </st><mi lisp="*var-tag*">C</mi><h>*</h><mrow lisp="wxxml-paren"><p lisp="wxxml-paren"><mi lisp="*var-tag*">C</mi><h>*</h><msup><mrow><mi lisp="*var-tag*">R</mi></mrow><mn>2</mn></msup><mo>-</mo><mn>4</mn><h>*</h><mi lisp="*var-tag*">L</mi></p></mrow><st> positive, negative or zero?</st></math>
+/* [wxMaxima: question  end   ] */
+/* [wxMaxima: answer  start ] */
+p;
+/* [wxMaxima: answer  end   ] */
 
-/* Maxima can't load/batch files which end with a comment! */
-"Created with wxMaxima"$
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 23.05.1"$

@@ -1,33 +1,57 @@
 /* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
-/* [ Created with wxMaxima version 12.01.0 ] */
+/* [ Created with wxMaxima version 23.05.1 ] */
+/* [wxMaxima: input   start ] */
+kill(all);
+/* [wxMaxima: input   end   ] */
+
 
 /* [wxMaxima: input   start ] */
 i(s):=Vdc/L/(s^2+R/L*s+1/(L*C));
 /* [wxMaxima: input   end   ] */
 
+
 /* [wxMaxima: input   start ] */
 i:ilt(i(s), s, t);
 /* [wxMaxima: input   end   ] */
+/* [wxMaxima: question  start ] */
+<math><st>Is </st><mi lisp="*var-tag*">C</mi><h>*</h><mrow lisp="wxxml-paren"><p lisp="wxxml-paren"><mi lisp="*var-tag*">C</mi><h>*</h><msup><mrow><mi lisp="*var-tag*">R</mi></mrow><mn>2</mn></msup><mo>-</mo><mn>4</mn><h>*</h><mi lisp="*var-tag*">L</mi></p></mrow><st> positive, negative or zero?</st></math>
+/* [wxMaxima: question  end   ] */
+/* [wxMaxima: answer  start ] */
+p;
+/* [wxMaxima: answer  end   ] */
+
 
 /* [wxMaxima: input   start ] */
 diff(i,t,1);
 /* [wxMaxima: input   end   ] */
 
+
 /* [wxMaxima: input   start ] */
 %*L;
 /* [wxMaxima: input   end   ] */
 
+
 /* [wxMaxima: input   start ] */
 integrate(i, t, 0, t);
 /* [wxMaxima: input   end   ] */
+/* [wxMaxima: question  start ] */
+<math><st>Is </st><mo>-</mo><mrow lisp="wxxml-paren"><p lisp="wxxml-paren"><mfrac><mrow><q><msup><mrow><mi lisp="*var-tag*">C</mi></mrow><mn>2</mn></msup><h>*</h><msup><mrow><mi lisp="*var-tag*">R</mi></mrow><mn>2</mn></msup><mo>-</mo><mn>4</mn><h>*</h><mi lisp="*var-tag*">C</mi><h>*</h><mi lisp="*var-tag*">L</mi></q></mrow><mrow><mi lisp="*var-tag*">C</mi><h>*</h><mi lisp="*var-tag*">R</mi></mrow></mfrac></p></mrow><st> equal to </st><mo>-</mo><mn>1</mn><st>?</st></math>
+/* [wxMaxima: question  end   ] */
+/* [wxMaxima: answer  start ] */
+y;
+/* [wxMaxima: answer  end   ] */
+
 
 /* [wxMaxima: input   start ] */
 %*(1/C);
 /* [wxMaxima: input   end   ] */
 
+
 /* [wxMaxima: input   start ] */
 kill(all);
 /* [wxMaxima: input   end   ] */
 
-/* Maxima can't load/batch files which end with a comment! */
-"Created with wxMaxima"$
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 23.05.1"$

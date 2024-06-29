@@ -1,5 +1,5 @@
 /* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
-/* [ Created with wxMaxima version 22.04.0 ] */
+/* [ Created with wxMaxima version 23.05.1 ] */
 /* [wxMaxima: input   start ] */
 R_parallel(R1, R2):=(R1*R2)/(R1+R2);
 /* [wxMaxima: input   end   ] */
@@ -25,15 +25,7 @@ g_101(x):=cos(x);
 
 
 /* [wxMaxima: input   start ] */
-wxdraw2d(
-key=
-)
-/* [wxMaxima: input   end   ] */
-
-
-/* [wxMaxima: input   start ] */
-/*this is a comment*/
-101 φ
+/*this is a comment*/;
 /* [wxMaxima: input   end   ] */
 
 
@@ -314,4 +306,4 @@ wxdraw2d(
 
 
 /* Old versions of Maxima abort on loading files that end in a comment. */
-"Created with wxMaxima 22.04.0"$
+"Created with wxMaxima 23.05.1"$

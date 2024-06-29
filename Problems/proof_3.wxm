@@ -1,5 +1,10 @@
 /* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
-/* [ Created with wxMaxima version 22.04.0 ] */
+/* [ Created with wxMaxima version 23.05.1 ] */
+/* [wxMaxima: input   start ] */
+kill(all);
+/* [wxMaxima: input   end   ] */
+
+
 /* [wxMaxima: input   start ] */
 w:2*%pi*50$
 R:12$
@@ -28,4 +33,4 @@ kill(all);
 
 
 /* Old versions of Maxima abort on loading files that end in a comment. */
-"Created with wxMaxima 22.04.0"$
+"Created with wxMaxima 23.05.1"$
