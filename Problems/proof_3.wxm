@@ -6,9 +6,7 @@ kill(all);
 
 
 /* [wxMaxima: input   start ] */
-w:2*%pi*50$
-R:12$
-L:22*10^-3$
+w:2*%pi*50$ R:12$ L:22*10^-3$
 z2:R^2+(w*L)^2$
 Vm:230*sqrt(2)$
 E:180$
